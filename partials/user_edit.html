@@ -1,0 +1,34 @@
+<div class="modal_head">
+    <i class="icon_close" onclick="common.modal_hide()"></i>
+</div>
+<div class="modal_body">
+    <div class="input_group_modal group_modal_error{if isset($user.error)} active{/if}" id="modal_errors">{if isset($user.error)}{$user.error.error_msg}{/if}</div>
+    <div class="input_group_modal">
+        <div>First Name</div>
+        <input type="text" id="first_name" class="{if isset($user.error) && $user.error.error_code == 1}error{/if}" value="{if isset($user.first_name)}{$user.first_name}{/if}">
+    </div>
+    <div class="input_group_modal">
+        <div>Last Name</div>
+        <input type="text" id="last_name" class="{if isset($user.error) && $user.error.error_code == 2}error{/if}" value="{if isset($user.last_name)}{$user.last_name}{/if}">
+    </div>
+    <div class="input_group_modal">
+        <div>Phone</div>
+        <input type="text" id="phone" class="{if isset($user.error) && $user.error.error_code == 3}error{/if}" value="{if isset($user.phone)}{$user.phone}{/if}">
+    </div>
+    <div class="input_group_modal">
+        <div>Email</div>
+        <input type="text" id="email" class="{if isset($user.error) && $user.error.error_code == 4}error{/if}" value="{if isset($user.email)}{$user.email}{/if}">
+    </div>
+    <div class="input_group_modal">
+        <div>Plots</div>
+        <input type="text" id="plot_id" value="{if isset($user.plot_id)}{$user.plot_id}{/if}">
+    </div>
+    <div class="modal_controls">
+        <div>
+            <div class="btn_modal" onclick="common.user_edit_update({if isset($user.user_id)}{$user.user_id}{/if});">Save</div>
+        </div>
+        <div>
+            <div class="btn_modal light" onclick="common.modal_hide();">Cancel</div>
+        </div>
+    </div>
+</div>
